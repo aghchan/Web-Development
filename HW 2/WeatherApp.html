@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Weather App</title>
+
+	<!-- get bootstrap over the internet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		
+	<!-- css file for this app -->
+	<link rel="stylesheet" href="css/weather.css"></link>
+</head>
+
+<body>
+	<!-- Bootstrap always begins with a container -->
+   <div class="container text-center">
+
+	<!-- the app appears in a single row -->	
+	<div class="row">
+	   <!-- 4 columns wide and moved over 4 columns = centered --> 
+	   <div class="col-sm-4 col-sm-offset-4" id="weather_app">
+			
+		<!-- now the actual contents; nested in that middle chunk -->	
+		<!-- top row fills up all 12 columns of inner grid -->
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Weather App</h1>
+			</div>
+		</div>
+		
+		<div class="row ">
+			<div class="col-sm-12">
+				<img id="weather_img" src="img/partlyCloudy.png" />				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p ><b>Zip Code:</b> <id="zip"> 95616 </p>
+			</div>
+		</div>
+					
+		<div class="row">
+			<div class="col-sm-12">
+				<p><b>Weather For Today:</b> <id = "weather"> Partly Cloudy</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p><b> Temperature: </b> <id = "temperature"> </p>
+
+			</div>
+		</div>
+
+		<hr/> <!-- the horizontal line -->
+		<div class="row">
+			<!-- fills up 8 columns, moved over 2 = centered -->
+			<div class="col-sm-8 col-sm-offset-2">
+			   <form  class="form-horizontal" action = "widget3.html" method="get">
+
+				<div class="form-group">
+				   <label>Please enter zip code:</label>
+				   <input id="money" type="text" min="0" pattern="\d{5,5}"  placeholder="12345" name="zip" onchange="save()">
+				</div>
+
+
+			   </form>	
+			   <button type="button" onclick = "changeZip()">Submit</button>
+	   	   </div> <!-- column --> 
+		</div> <!-- last row -->
+	   </div> <!-- column of enclosing row -->
+	</div> <!-- enclosing row -->
+   </div> <!-- container -->
+
+<script src ="js/weather.js"></script>
+<script id="weatherQuery" src="https://query.yahooapis.com/v1/public/yql?q=select * from weather.forecast where woeid = 2389646&format=json&callback=callbackFunction">
+</script>
+</body>
+</html>

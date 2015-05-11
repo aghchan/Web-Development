@@ -1,0 +1,25 @@
+
+circle.wheel {
+	fill: white;
+	stroke: black;
+	stroke-width: 10;
+}
+
+
+rect.background{
+	fill: #44aa44;
+}
+
+rect.background2{
+	fill: #00FFFF;
+}
+
+.biker {
+	stroke-width: 20;
+	stroke: #EED033;
+	stroke-linecap: round;
+}
+
+#bod {
+	stroke-width: 30;
+}
